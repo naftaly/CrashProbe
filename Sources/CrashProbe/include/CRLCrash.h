@@ -26,6 +26,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef CRL_LOAD
+#define CRL_LOAD + (void)load { [self registerCrash:[self new]]; }
+#endif
+
 @interface CRLCrash : NSObject
 
 + (NSArray<CRLCrash *> *)crashes;

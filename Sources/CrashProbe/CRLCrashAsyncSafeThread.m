@@ -28,7 +28,7 @@
 #import <pthread.h>
 
 @implementation CRLCrashAsyncSafeThread
-
+CRL_LOAD
 - (NSString *)category { return @"Async-Safety"; }
 - (NSString *)title { return @"Crash with _pthread_list_lock held"; }
 - (NSString *)desc { return @""

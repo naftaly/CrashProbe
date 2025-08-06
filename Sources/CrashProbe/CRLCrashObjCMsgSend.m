@@ -28,7 +28,7 @@
 #import <objc/message.h>
 
 @implementation CRLCrashObjCMsgSend
-
+CRL_LOAD
 - (NSString *)category { return @"Objective-C"; }
 - (NSString *)title { return @"Crash inside objc_msgSend()"; }
 - (NSString *)desc { return @"Send a message to an invalid object, resulting in a crash inside objc_msgSend()."; }

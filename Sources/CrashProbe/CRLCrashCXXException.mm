@@ -38,7 +38,7 @@ const char* kaboom_exception::what() const throw()
 }
 
 @implementation CRLCrashCXXException
-
+CRL_LOAD
 - (NSString *)category { return @"Exceptions"; }
 - (NSString *)title { return @"Throw C++ exception"; }
 - (NSString *)desc { return @""

@@ -28,7 +28,7 @@
 #import <sys/mman.h>
 
 @implementation CRLCrashGarbage
-
+CRL_LOAD
 - (NSString *)category { return @"SIGSEGV"; }
 - (NSString *)title { return @"Dereference a bad pointer"; }
 - (NSString *)desc { return @"Attempt to read from a garbage pointer that's not mapped but also isn't NULL."; }

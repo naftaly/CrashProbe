@@ -27,7 +27,7 @@
 #import "CRLCrashStackGuard.h"
 
 @implementation CRLCrashStackGuard
-
+CRL_LOAD
 - (NSString *)category { return @"SIGSEGV"; }
 - (NSString *)title { return @"Stack overflow"; }
 - (NSString *)desc { return @""

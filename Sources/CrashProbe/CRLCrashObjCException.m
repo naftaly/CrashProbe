@@ -27,7 +27,7 @@
 #import "CRLCrashObjCException.h"
 
 @implementation CRLCrashObjCException
-
+CRL_LOAD
 - (NSString *)category { return @"Exceptions"; }
 - (NSString *)title { return @"Throw Objective-C exception"; }
 - (NSString *)desc { return @""

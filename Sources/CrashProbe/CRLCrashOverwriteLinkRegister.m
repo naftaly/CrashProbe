@@ -27,7 +27,7 @@
 #import "CRLCrashOverwriteLinkRegister.h"
 
 @implementation CRLCrashOverwriteLinkRegister
-
+CRL_LOAD
 - (NSString *)category { return @"Various"; }
 - (NSString *)title { return @"Overwrite link register, then crash"; }
 - (NSString *)desc { return @""

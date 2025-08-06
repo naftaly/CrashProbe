@@ -28,7 +28,7 @@
 #import <objc/message.h>
 
 @implementation CRLCrashReleasedObject
-
+CRL_LOAD
 - (NSString *)category { return @"Objective-C"; }
 - (NSString *)title { return @"Message a released object"; }
 - (NSString *)desc { return @"Send a message to an object whose memory has already been freed."; }

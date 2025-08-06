@@ -30,16 +30,13 @@ static NSMutableSet *crashTypes = nil;
 
 @implementation CRLCrash
 
+CRL_LOAD
+
 + (void)initialize
 {
 	static dispatch_once_t predicate = 0;
 	
 	dispatch_once(&predicate, ^ { crashTypes = [[NSMutableSet alloc] init]; });
-}
-
-+ (void)load
-{
-    [self registerCrash:[self new]];
 }
 
 + (NSArray<CRLCrash *> *)crashes

@@ -27,7 +27,7 @@
 #import "CRLCrashUndefInst.h"
 
 @implementation CRLCrashUndefInst
-
+CRL_LOAD
 - (NSString *)category { return @"SIGILL"; }
 - (NSString *)title { return @"Execute an undefined instruction"; }
 - (NSString *)desc { return @"Attempt to execute an instructiondinn not to be defined on the current architecture."; }

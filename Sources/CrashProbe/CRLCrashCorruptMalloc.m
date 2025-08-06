@@ -29,7 +29,7 @@
 #import <mach/mach.h>
 
 @implementation CRLCrashCorruptMalloc
-
+CRL_LOAD
 - (NSString *)category { return @"Various"; }
 - (NSString *)title { return @"Corrupt malloc()'s internal tracking information"; }
 - (NSString *)desc { return @""

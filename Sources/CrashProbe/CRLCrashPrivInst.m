@@ -27,7 +27,7 @@
 #import "CRLCrashPrivInst.h"
 
 @implementation CRLCrashPrivInst
-
+CRL_LOAD
 - (NSString *)category { return @"SIGILL"; }
 - (NSString *)title { return @"Execute a privileged instruction"; }
 - (NSString *)desc { return @"Attempt to execute an instruction that can only be executed in supervisor mode."; }

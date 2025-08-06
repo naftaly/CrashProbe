@@ -27,7 +27,7 @@
 #import "CRLCrashAbort.h"
 
 @implementation CRLCrashAbort
-
+CRL_LOAD
 - (NSString *)category { return @"SIGTRAP"; }
 - (NSString *)title { return @"Call abort()"; }
 - (NSString *)desc { return @"Call abort() to terminate the program."; }

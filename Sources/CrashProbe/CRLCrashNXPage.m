@@ -28,7 +28,7 @@
 #import <sys/mman.h>
 
 @implementation CRLCrashNXPage
-
+CRL_LOAD
 - (NSString *)category { return @"SIGSEGV"; }
 - (NSString *)title { return @"Jump into an NX page"; }
 - (NSString *)desc { return @"Call a function pointer to memory in a non-executable page."; }

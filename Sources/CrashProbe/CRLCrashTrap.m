@@ -27,7 +27,7 @@
 #import "CRLCrashTrap.h"
 
 @implementation CRLCrashTrap
-
+CRL_LOAD
 - (NSString *)category { return @"SIGTRAP"; }
 - (NSString *)title { return @"Call __builtin_trap()"; }
 - (NSString *)desc { return @"Call __builtin_trap() to generate a trap exception."; }

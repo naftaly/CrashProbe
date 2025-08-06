@@ -17,7 +17,10 @@ let package = Package(
         .target(
             name: "CrashProbe"
         ),
-            
+        .testTarget(
+            name: "CrashProbeTests",
+            dependencies: ["CrashProbe"]
+        ),
 
     ]
 )

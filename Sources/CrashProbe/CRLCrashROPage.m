@@ -27,7 +27,7 @@
 #import "CRLCrashROPage.h"
 
 @implementation CRLCrashROPage
-
+CRL_LOAD
 static void __attribute__((used)) dummyfunc(void)
 {
 }

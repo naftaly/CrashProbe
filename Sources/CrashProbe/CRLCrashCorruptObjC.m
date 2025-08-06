@@ -31,7 +31,7 @@
 #import <mach-o/nlist.h>
 
 @implementation CRLCrashCorruptObjC
-
+CRL_LOAD
 - (NSString *)category { return @"Various"; }
 - (NSString *)title { return @"Corrupt the Objective-C runtime's structures"; }
 - (NSString *)desc { return @""

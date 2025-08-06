@@ -27,7 +27,7 @@
 #import "CRLCrashSmashStackTop.h"
 
 @implementation CRLCrashSmashStackTop
-
+CRL_LOAD
 - (NSString *)category { return @"Various"; }
 - (NSString *)title { return @"Smash the top of the stack"; }
 - (NSString *)desc { return @""
