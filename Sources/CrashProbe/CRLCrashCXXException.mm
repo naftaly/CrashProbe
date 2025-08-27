@@ -26,6 +26,7 @@
 
 #import "CRLCrashCXXException.h"
 #import <exception>
+#import <string>
 
 class kaboom_exception : public std::exception
 {
@@ -50,6 +51,109 @@ CRL_LOAD
 - (void)crash __attribute__((noreturn))
 {
 	throw new kaboom_exception;
+}
+
+@end
+
+@interface CRLCrashBadAllocException : CRLCrash
+@end
+
+@implementation CRLCrashBadAllocException
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw std::bad_alloc"; }
+- (NSString *)desc { return @"Throw an uncaught C++ exception. ";
+}
+
+- (void)crash __attribute__((noreturn))
+{
+    throw new std::bad_alloc();
+}
+
+@end
+
+@interface CRLCrashStdStringException : CRLCrash
+@end
+
+@implementation CRLCrashStdStringException
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw std::string"; }
+- (NSString *)desc { return @"Throw an uncaught C++ exception. ";
+}
+
+- (void)crash __attribute__((noreturn))
+{
+    throw new std::string("std::string exception content");
+}
+
+@end
+
+@interface CRLCrashStd2StringException : CRLCrash
+@end
+
+@implementation CRLCrashStd2StringException
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw std::string stack"; }
+- (NSString *)desc { return @"Throw an uncaught C++ exception. ";
+}
+
+- (void)crash __attribute__((noreturn))
+{
+    throw std::string("std::string exception content");
+}
+
+@end
+
+@interface CRLCrashCharException : CRLCrash
+@end
+
+@implementation CRLCrashCharException
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw const char *"; }
+- (NSString *)desc { return @"Throw an uncaught C++ exception. ";
+}
+
+- (void)crash __attribute__((noreturn))
+{
+    throw "char * exception content";
+}
+
+@end
+
+@interface CRLCrashChar2Exception : CRLCrash
+@end
+
+@implementation CRLCrashChar2Exception
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw char *"; }
+- (NSString *)desc { return @"Throw an uncaught C++ exception. ";
+}
+
+- (void)crash __attribute__((noreturn))
+{
+    static char *c = "char * exception content";
+    throw c;
+}
+
+@end
+
+@interface CRLCrashObjCPPThrowCException: CRLCrash
+@end
+
+@implementation CRLCrashObjCPPThrowCException
+CRL_LOAD
+- (NSString *)category { return @"Exceptions"; }
+- (NSString *)title { return @"Throw Objective-C exception"; }
+- (NSString *)desc { return @"Raise an uncaught Objective-C exception."; }
+
+- (void)crash __attribute__((noreturn))
+{
+    throw [NSException exceptionWithName:NSGenericException reason:@"An uncaught exception! SCREAM."
+                                 userInfo:@{ NSLocalizedDescriptionKey: @"I'm in your program, catching your exceptions!" }];
 }
 
 @end
